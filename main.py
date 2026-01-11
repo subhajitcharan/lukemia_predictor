@@ -1,7 +1,7 @@
 import streamlit as st
 from src.extractor import processing
 from src.prediction import make_Predictions
-st.title("Lukemia Predictor")
+st.title("Lukemia Predictor(Blood Cancer Detector)")
 st.warning("Warning:Only for Educational Purposes.Use peripheral blood smear (PBS) for testing")
 uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
 def computation(upload):
