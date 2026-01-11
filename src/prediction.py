@@ -1,9 +1,9 @@
-import tensorflow as tf
 import numpy as np
-model=tf.keras.models.load_model("./ml_model/lukemia_prediction_model.keras")
+from ml_model.loader import load_model
+model=load_model()
 def make_Predictions(img_array):
     pred=model.predict(img_array)
-    class_names = ['benign', 'early', 'pre', 'pro']
+    class_names = ['benign', 'malignent:early-B', 'malignent:pre-B', 'malignent:pro-B']
     predicted_class = class_names[np.argmax(pred)]
     confidence = np.max(pred)
     return predicted_class,confidence
